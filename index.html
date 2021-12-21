@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Import leaflet jquery and slide bar-->
+    <script src="libraries/leaflet-src.js"></script>
+    <script src="libraries/jquery.js"></script>
+    <script src="libraries/busyLoad.js"></script>
+    <script src="libraries/leaflet-sidebar.js"></script>
+
+    <!--Import materialize.css-->
+    
+    <link rel="stylesheet" href="css/bootstrap-slider.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+           
+
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/busyLoad.css" />
+    <link rel="stylesheet" href="css/leaflet-sidebar.css" />
+
+    <title>BIOPAMA - Oilpalm</title>
+  </head>
+
+
+  <body>
+    <!-- nav bar -->
+      <nav>
+        <!-- https://material.io/tools/color/#!/?view.left=0&view.right=0 -->
+        <div class="nav-wrapper blue-grey lighten-1">
+
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          
+        </div>
+ 
+      </nav>
+      <ul id="slide-out" class="sidenav">
+        <div class="slider-contents">
+
+          <li>
+            <div class="row">
+              <div class="col s12">
+                <div class="card">
+                  <div class="card-image card-image_country">
+                    <img src="https://www.euractiv.com/wp-content/uploads/sites/2/2019/01/palm-800x450.jpg">
+                    <span class="card-title">Oil palm plantation</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light biopama-gray"><i class="material-icons add_oil_palm">add</i></a>
+                  </div>
+                  <div class="card-content oil_palm_main">
+                    <span class="legend_name card-title activator">Legend<i class="material-icons right">more_vert</i></span>
+                    <p>
+                      <div class="c-legend-content">
+                        <ul class="c-legend-choropleth"><li>
+      
+                        <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #bb7101!important; ; "></div>
+                        <p><span class="name"><i>Industrial mature oil palm plantation</i></span></p></li>
+                        <li>
+                          <div class="oil_palm_1d active_layer icon-choropleth" style="background-color: #de9f26!important; "></div>
+                          <p><span class="name"><i>Smallholder mature oil palm plantation</i></span></p></li>
+                          <li>
+                        </div>
+                        <div id="oil_palm_date_div"></div>
+                        <div id="show_pa"><span class="pa_add">Add Terrestrial Protected Areas<i class="material-icons right">layers</i></span></div>
+                    </p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title white-text">Oil palm plantation<i class="material-icons right">close</i></span>
+                    <p>Oil palm plantation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        <li>
+          <div class="row">
+            <div class="col s12">
+              <div class="card">
+                <div class="card-image card-image_country">
+                  <img src="https://www.euractiv.com/wp-content/uploads/sites/2/2019/01/palm-800x450.jpg">
+                  <span class="card-title">Probability of mature oil palm plantation (%)</span>
+                  <a class="btn-floating halfway-fab waves-effect waves-light biopama-gray"><i class="material-icons add_oil_palm_p">add</i></a>
+                </div>
+                <div class="card-content oil_palm_p_main">
+                  <span class="legend_name card-title activator">Legend<i class="material-icons right">more_vert</i></span>
+                  <p>
+                    <div class="c-legend-content">
+                      <ul class="c-legend-choropleth"><li>
+    
+                      <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #18A7D3!important; ; "></div>
+                      <p><span class="name"><i>10</i></span></p></li>
+                      <li>
+                        <div class="oil_palm_1d active_layer icon-choropleth" style="background-color: #31ABC1!important; "></div>
+                        <p><span class="name"><i>20</i></span></p></li>
+                        <li>
+                        <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #49AFAF!important; ; "></div>
+                        <p><span class="name"><i>30</i></span></p></li>
+                        <li>
+                          <div class="oil_palm_1d active_layer icon-choropleth" style="background-color: #62B39D!important; "></div>
+                          <p><span class="name"><i>40</i></span></p></li>
+                          <li>
+                          <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #7AB78B!important; ; "></div>
+                          <p><span class="name"><i>50</i></span></p></li>
+                          <li>
+                            <div class="oil_palm_1d active_layer icon-choropleth" style="background-color: #93BB79!important; "></div>
+                            <p><span class="name"><i>60</i></span></p></li>
+                            <li>
+                            <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #ABBF67!important; ; "></div>
+                            <p><span class="name"><i>70</i></span></p></li>
+                            <li>
+                              <div class="oil_palm_1d active_layer icon-choropleth" style="background-color: #C4C355!important; "></div>
+                              <p><span class="name"><i>80</i></span></p></li>
+                              <li>
+                              <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #DCC743!important; ; "></div>
+                              <p><span class="name"><i>90</i></span></p></li>
+                              <li>
+                                <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #F5CB32!important; ; "></div>
+                                <p><span class="name"><i>100</i></span></p></li>
+                                <li>
+
+
+
+                      </div>
+                      <div id="oil_palm_p_date_div"></div>
+                      <div id="show_pa"><span class="pa_add">Add Terrestrial Protected Areas<i class="material-icons right">layers</i></span></div>
+                  </p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title white-text">Probability of mature oil palm plantation<i class="material-icons right">close</i></span>
+                  <p>Probability of mature oil palm plantation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col s12">
+              <div class="card">
+                <div class="card-image card-image_pa">
+                  <img src="https://www.euractiv.com/wp-content/uploads/sites/2/2019/01/palm-800x450.jpg">
+                  <span class="card-title">Global oilpalm validation dataset (points)</span>
+                  <a class="btn-floating halfway-fab waves-effect waves-light biopama-gray"><i class="material-icons add_oil_palm_vp">add</i></a>
+                </div>
+                <div class="card-content oil_palm_vp_main">
+                  <span class="legend_name card-title activator">Legend<i class="material-icons right">more_vert</i></span>
+                  <p>
+                    <div class="c-legend-content">
+                      <ul class="c-legend-choropleth"><li>
+                      <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #fbfbfb93!important; ; "></div>
+                      <p><span class="name"><i>Other Land Use/Cover</i></span></p></li>
+                      <li>
+                        <div class="oil_palm_1d active_layer icon-choropleth" style="background-color: #F5CB32!important; "></div>
+                        <p><span class="name"><i>Industrial Mature OP</i></span></p></li>
+                        <li>
+                        <div class="oil_palm_7d active_layer icon-choropleth" style="background-color: #bb7101!important; ; "></div>
+                        <p><span class="name"><i>Smallholder Mature OP</i></span></p></li>
+                      </div>
+                      <div id="oil_palm_vp_date_div"></div>
+                      <div id="show_pa"><span class="pa_add">Add Terrestrial Protected Areas<i class="material-icons right">layers</i></span></div>
+                  </p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title white-text">Global oilpalm validation dataset (points)<i class="material-icons right">close</i></span>
+                  <p>Global oilpalm validation dataset (points).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </div>
+      </ul>
+      
+
+
+
+        <!-- div map -->
+	      <div id="map"></div>
+        <!-- end of map -->
+  </body>
+
+
+  <script>
+         $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  $(document).ready(function(){
+  setTimeout(function() {
+  $('body > nav > div > a.sidenav-trigger > i').trigger('click');
+}, 1000);
+});
+  </script>
+  <!-- include our own javascript -->
+  <script src="stats.js"></script>
+
+      <script src="libraries/bootstrap-slider.js"></script>
+      <script src="libraries/highcharts.js"></script>
+      <script src="libraries/highcharts_more.js"></script>
+</html>
